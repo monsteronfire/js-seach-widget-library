@@ -1,7 +1,7 @@
 (function(global, $) {
 
   var SearchWidget = function(destination, startDate, endDate, partnerName) {
-    return SearchWidget.init(destination, startDate, endDate, partnerName);
+    return new SearchWidget.init(destination, startDate, endDate, partnerName);
   };
 
   SearchWidget.prototype = {};
