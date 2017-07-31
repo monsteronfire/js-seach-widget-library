@@ -4,7 +4,19 @@
     return new SearchWidget.init(destination, startDate, endDate, partnerName);
   };
 
-  SearchWidget.prototype = {};
+  var supportedDomains = [
+    'default',
+    'airasia',
+    'tunehotels'
+  ];
+
+  SearchWidget.prototype = {
+    validate: function () {
+      if (supportedDomains.indexOf(this.partnerName) === -1) {
+        throw 'Unsupported partner';
+      }
+    }
+  };
 
   SearchWidget.init = function(destination, startDate, endDate, partnerName) {
     var self = this;
@@ -12,6 +24,7 @@
     self.startDate = startDate || '';
     self.endDate = endDate || '';
     self.partnerName = partnerName || 'default';
+    self.validate();
   };
 
   SearchWidget.init.prototype = SearchWidget.prototype;
