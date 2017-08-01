@@ -32,3 +32,12 @@
   global.SearchWidget = global.SW$ = SearchWidget;
 
 })(window, jQuery);
+
+// Todo
+// form validation
+// partnerUrls stored in object
+// get url parameters
+// redirectdomain
+// print error messages
+// redirect to redirectdomain
+// clear form after submission, clear error messages on change
