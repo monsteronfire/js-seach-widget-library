@@ -11,11 +11,19 @@
   ];
 
   SearchWidget.prototype = {
+
     validate: function () {
       if (supportedDomains.indexOf(this.partnerName) === -1) {
         throw 'Unsupported partner';
       }
+    },
+
+    setPartner: function (partner) {
+      this.partnerName = partner;
+      this.validate();
+      return this;
     }
+
   };
 
   SearchWidget.init = function(destination, startDate, endDate, partnerName) {
