@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
-  var search = SW$('', '', '', 'airasia');
+  var search = SW$().setPartner('airasia');
 
   $('#search-form').submit(function (event) {
     event.preventDefault();
+    search.validate().redirect();
   });
 
   $('#destinations').on('change', function () {
@@ -12,6 +13,10 @@ $(document).ready(function () {
 
   $('#start-date').on('change', function () {
     search.setStartDate('#start-date');
+  });
+
+  $('#end-date').on('change', function () {
+    search.setEndDate('#start-date');
   });
 
 });

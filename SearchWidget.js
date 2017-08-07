@@ -12,7 +12,7 @@
 
   SearchWidget.prototype = {
     validateDestination: function () {
-      if (this.destination === null) {
+      if (this.destination === '') {
         throw 'Destination is empty';
       }
     },
@@ -68,6 +68,7 @@
     },
 
     redirect: function (event) {
+      console.log('redirect');
       return this;
     }
 
@@ -79,7 +80,7 @@
     self.startDate = startDate || '';
     self.endDate = endDate || '';
     self.partnerName = partnerName || 'default';
-    self.validate();
+    //self.validate();
   };
 
   SearchWidget.init.prototype = SearchWidget.prototype;
