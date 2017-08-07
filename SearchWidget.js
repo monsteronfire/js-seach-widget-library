@@ -12,15 +12,21 @@
 
   SearchWidget.prototype = {
     validateDestination: function () {
-      console.log('validate destination');
+      if (this.destination === null) {
+        throw 'Destination is empty';
+      }
     },
 
     validateStartDate: function () {
-      console.log('validate startDate');
+      if (this.startDate === '') {
+        throw 'Start date is empty';
+      }
     },
 
     validateEndDate: function () {
-      console.log('validate endDate');
+      if (this.endDate === '') {
+        throw 'End date is empty';
+      }
     },
 
     validatePartner: function () {
@@ -37,20 +43,20 @@
       return this;
     },
 
-    setDestination: function(dest) {
-      this.destination = dest;
+    setDestination: function(selector) {
+      this.destination = $(selector).val();
       this.validateDestination();
       return this;
     },
 
-    setStartDate: function(start) {
-      this.startDate = start;
+    setStartDate: function(selector) {
+      this.startDate = $(selector).val();
       this.validateStartDate();
       return this;
     },
 
-    setEndDate: function(start) {
-      this.endDate = start;
+    setEndDate: function(selector) {
+      this.endDate = $(selector).val();
       this.validateEndDate();
       return this;
     },
