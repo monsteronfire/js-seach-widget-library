@@ -4,7 +4,8 @@ $(document).ready(function () {
 
   $('#search-form').submit(function (event) {
     event.preventDefault();
-    search.validate().redirect();
+    search.validate().buildParams().redirect();
+    this.reset();
   });
 
   $('#destinations').on('change', function () {

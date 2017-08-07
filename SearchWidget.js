@@ -10,6 +10,12 @@
     'tunehotels'
   ];
 
+  var partnerUrls = {
+    default: 'https://touristly.com',
+    airasia: 'https://deals.airasia.com',
+    tunehotels: 'https://tunehotels.touristly.net'
+  };
+
   SearchWidget.prototype = {
     validateDestination: function () {
       if (this.destination === '') {
@@ -64,6 +70,19 @@
     setPartner: function (partner) {
       this.partnerName = partner;
       this.validatePartner();
+      return this;
+    },
+
+    buildParams: function (partner) {
+      var url = partnerUrls[partner] + '/trips/new';
+      var params = $.param({
+        'destination': this.destination,
+        'startDate': this.startDate,
+        'endDate': this.endDate
+      });
+
+      url += '?' + params;
+      console.log(url);
       return this;
     },
 
