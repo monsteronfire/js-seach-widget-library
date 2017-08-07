@@ -11,17 +11,40 @@
   ];
 
   SearchWidget.prototype = {
+    validateDestination: function () {
+      console.log('validate destination');
+    },
 
-    validate: function () {
+    validateStartDate: function () {
+      console.log('validate startDate');
+    },
+
+    validateEndDate: function () {
+      console.log('validate endDate');
+    },
+
+    validatePartner: function () {
       if (supportedDomains.indexOf(this.partnerName) === -1) {
         throw 'Unsupported partner';
       }
     },
 
+    validate: function () {
+      this.validateDestination();
+      this.validateStartDate();
+      this.validateEndDate();
+      this.validatePartner();
+    },
+
     setPartner: function (partner) {
       this.partnerName = partner;
-      this.validate();
+      this.validatePartner();
       return this;
+    },
+
+    redirect: function (event) {
+      console.log('redirect');
+      this.validatePartner();
     }
 
   };
