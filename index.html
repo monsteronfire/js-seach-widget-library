@@ -7,16 +7,17 @@
 <body>
 
   <div class="search-widget">
-    <form>
-      <select>
+    <form id="search-form">
+      <select id="destinations">
+        <option disabled selected value>-- Select destination --</option>
         <option>Kuala Lumpur</option>
         <option>Penang</option>
         <option>Kota Kinabalu</option>
         <option>Kuching</option>
         <option>Langkawi</option>
       </select>
-      <input type="date"/>
-      <input type="date"/>
+      <input id="start-date" type="date"/>
+      <input id="end-date" type="date"/>
       <button id="submit" type="submit">Go</button>
     </form>
   </div>

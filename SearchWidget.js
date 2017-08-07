@@ -34,6 +34,25 @@
       this.validateStartDate();
       this.validateEndDate();
       this.validatePartner();
+      return this;
+    },
+
+    setDestination: function(dest) {
+      this.destination = dest;
+      this.validateDestination();
+      return this;
+    },
+
+    setStartDate: function(start) {
+      this.startDate = start;
+      this.validateStartDate();
+      return this;
+    },
+
+    setEndDate: function(start) {
+      this.endDate = start;
+      this.validateEndDate();
+      return this;
     },
 
     setPartner: function (partner) {
@@ -43,8 +62,7 @@
     },
 
     redirect: function (event) {
-      console.log('redirect');
-      this.validatePartner();
+      return this;
     }
 
   };
