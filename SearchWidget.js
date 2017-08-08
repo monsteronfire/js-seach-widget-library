@@ -16,7 +16,17 @@
     tunehotels: 'https://tunehotels.touristly.net'
   };
 
+  var errorMessages = {
+    generic: 'All fields mst be filled'
+  };
+
   SearchWidget.prototype = {
+    printErrorMessage: function (selector) {
+      var message = errorMessages.generic;
+      $(selector).html(message);
+      return this;
+    },
+
     validateDestination: function () {
       if (this.destination === '') {
         throw 'Destination is empty';
@@ -99,7 +109,6 @@
     self.startDate = startDate || '';
     self.endDate = endDate || '';
     self.partnerName = partnerName || 'default';
-    //self.validate();
   };
 
   SearchWidget.init.prototype = SearchWidget.prototype;
