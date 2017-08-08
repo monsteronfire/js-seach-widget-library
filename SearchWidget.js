@@ -83,8 +83,8 @@
       return this;
     },
 
-    buildParams: function (partner) {
-      var url = partnerUrls[partner] + '/trips/new';
+    buildParams: function () {
+      var url = partnerUrls[this.partnerName] + '/trips/new';
       var params = $.param({
         'destination': this.destination,
         'startDate': this.startDate,

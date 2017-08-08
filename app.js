@@ -9,7 +9,7 @@ $(document).ready(function () {
   });
 
   $('#destinations').on('change', function () {
-    search.setDestination('#destinations');
+    search.setDestination('#destinations').printErrorMessage('#error');
   });
 
   $('#start-date').on('change', function () {
